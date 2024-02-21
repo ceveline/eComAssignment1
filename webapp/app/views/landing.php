@@ -48,7 +48,7 @@
                                     <a class="nav-link" href="/Contact/contact_us">Contact us</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/Contact/read">See the messages we get</a>
+                                    <a class="nav-link" href="/Contact/message_listing">See the messages we get</a>
                                 </li>
                             </ul>
                             <form class="form-inline my-2 my-lg-0">

@@ -9,8 +9,8 @@ class App{
         //defined a few routes "url"=>"controller,method"
         $routes = ['Contact/' => 'Contact,landing',
                     'Contact/about' => 'Contact,about',
-                    'Contact/read' => 'Contact,message_listing',
-                    'Contact/contact_us'=> 'Contact,contact'
+                    'Contact/message_listing' => 'Contact,message_listing',
+                    'Contact/contact_us'=> 'Contact,contact',
                     
     ];
 

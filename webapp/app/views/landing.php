@@ -39,16 +39,16 @@
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="#">Landing Page <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="/Contact/">Landing Page <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">About us</a>
+                                    <a class="nav-link" href="/Contact/about">About us</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Contact us</a>
+                                    <a class="nav-link" href="/Contact/contact_us">Contact us</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">See the messages we get</a>
+                                    <a class="nav-link" href="/Contact/read">See the messages we get</a>
                                 </li>
                             </ul>
                             <form class="form-inline my-2 my-lg-0">

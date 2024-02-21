@@ -1,21 +1,28 @@
 <?php
-/*
-Contact Controller
-To receive the data from the form discussed earlier, your program must extract the right data from $_POST and 
-use it to set a new Message model object’s properties.
+namespace app\controllers;
 
-To the same object, your program must set the IP address obtained from accessing $_SERVER['REMOTE_ADDR'].
-Then, your program must call the write method of that message model object.
+use stdClass;
 
-Once the writing is complete, the program must redirect to the localhost/Contact/read URL with the 
-following instruction: header('location:/Contact/read');
-*/
+class Contact extends \app\core\Controller{
+    function landing() {
+        $this->view('landing');
+    }
 
-function view($name, $data=null){
-    //load the view files to present them to the Web user
-    include('app/views/' . $name . '.php');
+    // need to do the routing
+    function about() {
+        //show about us view
+
+    }
+
+    // need to do the routing
+    function contact() {
+        //show contact view
+
+    }
+
+    // need to do the routing
+    function message_listing() {
+        // show message_listing view
+    }
 }
 
-function landing() {
-    view('landing');
-}

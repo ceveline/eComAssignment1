@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>React App</title>
+  <!-- Bootstrap CDN -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -19,12 +21,29 @@
 <script type="text/babel">
   // Your React code goes here
   class App extends React.Component {
+    handleSubmit(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const email = formData.get('email');
+      const message = formData.get('message');
+      alert(`Email: ${email}\nMessage: ${message}`);
+    }
+
     render() {
       return (
-        <div>
-          <h1>Hello, React!</h1>
-          <p>This is a basic React app using CDNs.</p>
-          <button onClick={() => alert('You clicked the button!')}>Click Me</button>
+        <div className="container">
+          <h1 className="mt-5">Contact Us</h1>
+          <form onSubmit={this.handleSubmit} className="mt-3">
+            <div className="form-group">
+              <label htmlFor="email">Email:</label>
+              <input type="email" className="form-control" id="email" name="email" required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="message">Message:</label>
+              <textarea className="form-control" id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" className="btn btn-primary">Send Message</button>
+          </form>
         </div>
       );
     }

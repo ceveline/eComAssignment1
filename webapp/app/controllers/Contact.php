@@ -1,7 +1,8 @@
 <?php
 namespace app\controllers;
 
-use stdClass;
+// use stdClass;
+// use app\models\Message;
 
 class Contact extends \app\core\Controller{
     function landing() {
@@ -15,52 +16,79 @@ class Contact extends \app\core\Controller{
 
     }
 
-    // need to do the routing
-    function contact() {
+    function loadContactPage() {
         //show contact view
         $this->view('contact');
-
     }
 
     // need to do the routing
-    function read() {
-        print_r($_POST);
+    function sendMessage() {
 
-        $message = new \app\models\Message();
+        print_r($_POST);
+        $ip = $_SERVER['REMOTE_ADDR']; //get the IP address
+        print_r($ip);
+
+        $message_data = [
+            'email' => $_POST['email'],
+            'message' => $_POST['message'],
+            'IP' => $ip
+        ];
         
-        $message -> email = $_POST['email'];
-        $message -> message = $_POST['message'];
-        $message -> IP = $_POST['IP'];
+        \app\models\Message::write($message_data);
+    }
 
-        $message->write();
-        $this->view('read', $message);
-        header('location:/Contact/read');
-        // show message_listing view
+// show message_listing view
+        // print_r($_POST);
 
-        /*
-        print_r($_POST);
+        
+        
 
-		//call a view to show the submitted data
-		//collect the data
-		//declare a person object
-		$person = new \app\models\Person();
-		//populate the properties
-		$person->first_name = $_POST['first_name'];
-		$person->last_name = $_POST['last_name'];
-		$person->email = $_POST['email'];
-		$publications = $_POST['publications'] ?? [];
-		$person->weekly_flyer = in_array('weekly_flyer', $publications);
-		$person->mailing_list = in_array('mailing_list', $publications);
-		//$person->mailing_list = $_POST['mailing_list'] ?? 'unselected';//null coalescing to avoid warnings when no option of a radio button is selected
-		//hypothetically insert into a database
-		$person->insert(); //add the person to the data file
-		//show the feedback view to confirm with the user
-		//$this->view('Person/complete_registration',$person);
+        // $message_obj = new \app\models\Message();
+        
+        // $message_obj -> email = $_POST['email'];
+        // $message_obj -> message = $_POST['message'];
+        // $message_obj -> IP = $ip;
 
-		//redirect the user back to the list
-		header('location:/Person/');
-        */
+        // $message_obj->write();
+        // $this->view('read', $message_obj);
+        // header('location:/Contact/read');
+        
+    function loadMessagePage() {
+        $messages = \app\models\Message::read();
+		$this->view('read',$messages);
         // $this->view('read');
     }
+    
+
+    function writeMessage() {
+        
+        $email = $_POST['email'];
+        $message = $_POST['message'];
+
+        if(empty($email) || empty($message)) {
+            // Redirect back to the contact page with an error message or display an error message
+            // header('Location: /Contact/contact?error=Please fill in both email and message fields');
+            // exit();
+            echo "Please fill in both email and message fields";
+            return;
+        }
+
+        print_r($_POST);
+        $ip = $_SERVER['REMOTE_ADDR']; //get the IP address
+        print_r($ip);
+
+        $msg = new \app\models\Message();
+		//populate the properties
+		$msg->email = $email;
+		$msg->message = $message;
+		$msg->IP = $ip;
+        
+        \app\models\Message::write($msg);
+
+
+        header('location:/Contact/read');
+        
+    }
 }
+    
 

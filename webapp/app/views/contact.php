@@ -53,7 +53,7 @@
 
 <div class="container">
     <h1>Contact Us</h1>
-    <form id="contactForm" class="mt-3" method="POST" action="/Contact/read">
+    <form id="contactForm" class="mt-3" method="POST" action="/Contact/confirm_read">
         <div class="form-group">
             <label for="email">Email:</label>
             <input type="email" placeholder="jondoe@gmail.com" id="email" name="email" required>

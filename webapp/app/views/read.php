@@ -1,61 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Messages</title>
-    <!-- Bootstrap CSS CDN -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+	<title><?= $name ?> view</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
 <body>
+	<div id='container'>
+		<table>
+			<tr><th>Email:</th><th>Message:</th><th>IP:</th></tr>
 
-<div id="root"></div>
+		<?php
+		foreach($data as $index => $msg){
+			echo "<tr><td>$msg->email</td><td>$msg->message</td><td>$msg->IP</td></tr>";
+		}
+		?>
+		</table>
 
-<!-- React CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.development.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.development.js"></script>
-
-<!-- Babel CDN (for JSX transformation) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
-
-<script type="text/babel">
-    // Message component to display each message
-    function Message({ email, message, IP }) {
-        return (
-            <li className="list-group-item">
-                <strong>Email:</strong> {email}<br />
-                <strong>Message:</strong> {message}<br />
-                <strong>IP:</strong> {IP}
-            </li>
-        );
-    }
-
-    // Messages component to display all messages
-    class Messages extends React.Component {
-        render() {
-            const { messages } = this.props;
-            return (
-                <div className="container">
-                    <h1 className="mt-5">Messages</h1>
-                    <ul className="list-group mt-3">
-                        {messages.map((message, index) => (
-                            <Message key={index} {...message} />
-                        ))}
-                    </ul>
-                </div>
-            );
-        }
-    }
-
-    // Default messages data => temporary
-    const defaultMessages = [
-        {"email":"amy@email.com","message":"Hi","IP":"143.119.66.25"},
-        {"email":"bob@email.com","message":"I love my job!","IP":"141.78.73.72"}
-    ];
-
-    // Render Messages component with default messages
-    ReactDOM.render(<Messages messages={defaultMessages} />, document.getElementById('root'));
-</script>
-
+	</div>
 </body>
 </html>

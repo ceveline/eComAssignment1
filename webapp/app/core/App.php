@@ -2,6 +2,7 @@
 namespace app\core;
 
 class App{
+    
     function __construct(){
 
     $url = $_GET['url'];
@@ -9,8 +10,9 @@ class App{
         //defined a few routes "url"=>"controller,method"
         $routes = ['Contact/' => 'Contact,landing',
                     'Contact/about' => 'Contact,about',
-                    'Contact/read' => 'Contact,read',
-                    'Contact/contact_us'=> 'Contact,contact',
+                    'Contact/read' => 'Contact,loadMessagePage', //load the view
+                    'Contact/confirm_read'=> 'Contact,writeMessage', //re confirm the view page
+                    'Contact/contact_us'=> 'Contact,loadContactPage',
                     
     ];
 

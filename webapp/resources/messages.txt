@@ -1,0 +1,7 @@
+{"email":"cevelinevangelista@gmail.com","message":"Hello","IP":"172.17.0.1"}
+{"email":"cevelinevangelista@gmail.com","message":"Hello","IP":"172.17.0.1"}
+{"email":"jondoe@gmail.com","message":"hi","IP":"172.17.0.1"}
+{"email":"YourChubby1324@gmail.com","message":"your chubby","IP":"172.17.0.1"}
+{"email":"jondoe@gmail.com","message":"NOOOOOOOOOOOOOOOO","IP":"172.17.0.1"}
+{"email":"jondoe@gmail.com","message":"Red","IP":"172.17.0.1"}
+{"email":"2027495@vaniercollege.edu.qc.ca","message":"VANIER","IP":"172.17.0.1"}

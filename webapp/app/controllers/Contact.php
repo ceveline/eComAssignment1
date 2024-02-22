@@ -28,9 +28,12 @@ class Contact extends \app\core\Controller{
 
         $message = new \app\models\Message();
         
-        $message -> name = $_POST['email'];
-        $message -> email = $_POST['message'];
+        $message -> email = $_POST['email'];
+        $message -> message = $_POST['message'];
         $message -> IP = $_POST['IP'];
+
+        $message->write();
+        $this->view('read', $message);
         header('location:/Contact/read');
         // show message_listing view
 

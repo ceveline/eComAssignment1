@@ -1,56 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>React App</title>
-  <!-- Bootstrap CDN -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    h1 {
+        margin-top: 0;
+    }
+    label {
+        font-weight: bold;
+    }
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    </style>
 </head>
 <body>
 
-<div id="root"></div>
-
-<!-- React CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.development.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.development.js"></script>
-
-<!-- Babel CDN (for JSX transformation) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
-
-<script type="text/babel">
-  // Your React code goes here
-  class App extends React.Component {
-    handleSubmit(event) {
-      event.preventDefault();
-      const formData = new FormData(event.target);
-      const email = formData.get('email');
-      const message = formData.get('message');
-      alert(`Email: ${email}\nMessage: ${message}`);
-    }
-
-    render() {
-      return (
-        <div className="container">
-          <h1 className="mt-5">Contact Us</h1>
-          <form onSubmit={this.handleSubmit} className="mt-3" method="POST" action="/Contact/read">
-            <div className="form-group">
-              <label htmlFor="email">Email:</label>
-              <input type="email" placeholder="jondoe@gmail.com" className="form-control" id="email" name="email" required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Message:</label>
-              <textarea className="form-control" placeholder="Hello!" id="message" name="message" rows="4" required></textarea>
-            </div>
-            <button type="submit" className="btn btn-primary">Send Message</button>
-          </form>
+<div class="container">
+    <h1>Contact Us</h1>
+    <form id="contactForm" class="mt-3" method="POST" action="/Contact/read">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" placeholder="jondoe@gmail.com" id="email" name="email" required>
         </div>
-      );
-    }
-  }
-
-  ReactDOM.render(<App />, document.getElementById('root'));
-</script>
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea placeholder="Hello!" id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" name="submit">Send Message</button>
+    </form>
+</div>
 
 </body>
 </html>

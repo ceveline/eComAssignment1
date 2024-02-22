@@ -33,14 +33,14 @@
       return (
         <div className="container">
           <h1 className="mt-5">Contact Us</h1>
-          <form onSubmit={this.handleSubmit} className="mt-3">
+          <form onSubmit={this.handleSubmit} className="mt-3" method="POST" action="/Contact/read">
             <div className="form-group">
               <label htmlFor="email">Email:</label>
-              <input type="email" className="form-control" id="email" name="email" required />
+              <input type="email" placeholder="jondoe@gmail.com" className="form-control" id="email" name="email" required />
             </div>
             <div className="form-group">
               <label htmlFor="message">Message:</label>
-              <textarea className="form-control" id="message" name="message" rows="4" required></textarea>
+              <textarea className="form-control" placeholder="Hello!" id="message" name="message" rows="4" required></textarea>
             </div>
             <button type="submit" className="btn btn-primary">Send Message</button>
           </form>

@@ -3,8 +3,8 @@
 namespace app\models;
 
 class Message {
-    public $name;
     public $email;
+    public $message;
     public $IP;
 
     public function read() {

@@ -5,6 +5,7 @@ namespace app\core;
 class Controller{
 	function view($name, $data=null){
 		//load the view files to present them to the Web user
-		include('app/views/' . $name . '.php');
+		$view = 'app/views/' . $name . '.php';
+		include('app/views/Main/navbar.php');
 	}
 }

@@ -17,12 +17,6 @@ class Message {
 	}
 
     public static function read() {
-        // $file_name = 'resources/messages.txt';
-
-        // $content = file($file_name);
-
-        // return $content;
-
         //read the file and return the collection of people (all Person records)
 		$filename = 'resources/messages.txt';
 		$records = file($filename);
@@ -46,19 +40,4 @@ class Message {
         fclose($file_handle);
     }
     
-    // public static function write() {
-
-    //     $message_input = json_encode($this);
-
-    //     $filename = 'resources/messages.txt';
-
-    //     $file_handle = fopen($filename, 'a');
-
-    //     flock($file_handle, LOCK_EX);
-
-    //     fwrite($file_handle, $message_input . "\n");
-
-    //     fclose($file_handle);
-
-    // }
 }

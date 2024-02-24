@@ -29,7 +29,8 @@
                         <h2>Santiago&apos;s project</h2>
                         <p>This project aims to develop a user-friendly web application that helps people find the cheapest grocery prices nearby. The target users include those who want to save money on groceries, people with mobility issues, and busy professionals. Users should have basic computer skills to navigate the website easily. The main issue this project addresses is the lack of a central place to compare grocery prices locally, which currently requires visiting multiple stores or relying on ads. The goal is to use web scraping to gather real-time pricing data from different stores and present it in an easy-to-use format. This system aims to help users make better shopping decisions and save money on groceries.</p>
                         <h2>Ceveline&apos;s project</h2>
-                        <p>Lorem Ipsum</p>
+                        <img src='/images/hoopville.png' height="200"></img>
+                        <p>The "Hoopville" project involves creating a booking platform for a private multi-sport performance center focused on basketball in Montreal. The project aims to help our client develop an online e-commerce website offering athletic room rental and membership subscription options for booking courts and training sessions. Features include gym booking, scheduling sessions, canceling bookings, viewing schedules, and managing accounts and payments. Our goal is to create a user-friendly website with numerous features while maintaining a sleek design.</p>
                     </div>
                 );
             }

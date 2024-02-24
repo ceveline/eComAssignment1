@@ -95,25 +95,25 @@
                   <div className="col-md-6">
                     <figure className="text-center">
                       <img src="/images/placeholder.jpg" className="rounded-square" alt="Team Member 1" />
-                      <figcaption>Placeholder 1</figcaption>
+                      <figcaption>Ceveline Evangelista</figcaption>
                     </figure>
                   </div>
                   <div className="col-md-6">
                     <figure className="text-center">
                       <img src="/images/placeholder.jpg" className="rounded-square" alt="Team Member 2" />
-                      <figcaption>Placeholder 2</figcaption>
+                      <figcaption>Hussain Amin</figcaption>
                     </figure>
                   </div>
                   <div className="col-md-6">
                     <figure className="text-center">
                       <img src="/images/placeholder.jpg" className="rounded-square" alt="Team Member 3" />
-                      <figcaption>Placeholder 3</figcaption>
+                      <figcaption>Sereen Saaida</figcaption>
                     </figure>
                   </div>
                   <div className="col-md-6">
                     <figure className="text-center">
                       <img src="/images/placeholder.jpg" className="rounded-square" alt="Team Member 4" />
-                      <figcaption>Placeholder 4</figcaption>
+                      <figcaption>Denis Voronov</figcaption>
                     </figure>
                   </div>
                 </div>

@@ -2,9 +2,6 @@
 
 namespace app\controllers;
 
-// use stdClass;
-// use app\models\Message;
-
 class Contact extends \app\core\Controller
 {
     function index()
@@ -18,7 +15,6 @@ class Contact extends \app\core\Controller
         $this->view('Contact/index');
     }
 
-    // need to do the routing
     function sendMessage()
     {
 
@@ -40,7 +36,6 @@ class Contact extends \app\core\Controller
     {
         $messages = \app\models\Message::read();
         $this->view('Contact/read', $messages);
-        // $this->view('read');
     }
 
     function writeMessage()
@@ -51,8 +46,6 @@ class Contact extends \app\core\Controller
 
         if (empty($email) || empty($message)) {
             // Redirect back to the contact page with an error message or display an error message
-            // header('Location: /Contact/contact?error=Please fill in both email and message fields');
-            // exit();
             echo "Please fill in both email and message fields";
             return;
         }
